@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2level-list</title>
+</head>
+<body>
+    <div id="container"></div>
+    <script>
+        let ul = `<ul>`;
+        for (let i = 1; i <= 3; i++) {
+            let sub_ul = ``;
+            if (i == 1) {
+                sub_ul = `<ul>`;
+                for (let j = 1; j <= 2; j++) {
+                    sub_ul += `<li>Subitem ${j}</li>`;
+                }
+                sub_ul += `</ul>`;
+                // HW second item -> 3 subitems (3, 4, 5)
+            } else if (i == 2) {
+                sub_ul = `<ul>`;
+                for (let j = 3; j <= 5; j++) {
+                    sub_ul += `<li>Subitem ${j}</li>`;
+                }
+                sub_ul += `</ul>`;
+                // HW third item - > 1 subitems (6,7)
+            } else if (i == 3) {
+                sub_ul = `<ul>`;
+                sub_ul += `<li>Subitem 6</li>`;
+                sub_ul += `<li>Subitem 7</li>`;
+                sub_ul += `</ul>`;
+            }
+            ul += `<li> Item ${i} ${sub_ul}</li>`;
+        }
+        ul += `</ul>`;
+        container.innerHTML = ul;
+    </script>
+</body>
+</html>
